@@ -1,0 +1,24 @@
+.controlPanel {
+    border-bottom: 2px solid;
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonPlan {
+    background-color: lightgrey;
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+.buttonAddPlan {
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+.leftAlignedButtons {
+    display: flex;
+    align-items: center;
+}
+

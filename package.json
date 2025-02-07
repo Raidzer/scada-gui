@@ -1,0 +1,27 @@
+{
+    "name": "@scada/root",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "npm run -w @scada/app dev",
+        "build": "npm run -w @scada/app build",
+        "deploy": "ssh root@192.168.35.131 \"rm -rf /var/www/html/*\" && scp -r ./build/* root@192.168.35.131:/var/www/html",
+        "test": "vitest",
+        "testci": "vitest run --coverage"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "workspaces": [
+        "packages/app",
+        "packages/common",
+        "packages/state",
+        "packages/viewer",
+        "packages/editor"
+    ],
+    "dependencies": {
+        "@scada/root": "file:",
+        "gifler": "^0.1.0",
+        "lucide-react": "^0.454.0"
+    }
+}

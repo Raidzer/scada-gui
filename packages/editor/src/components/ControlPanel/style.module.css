@@ -1,0 +1,29 @@
+.containerPanel {
+    width: 100vw;
+    height: 50px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerPopover {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.panelButton {
+    margin: 5px;
+    background-color: gray;
+}
+
+.panelButton:last-child {
+    margin-left: auto;
+}
+
+.leftAlignedButtons {
+    display: flex;
+    align-items: center;
+}
+ 

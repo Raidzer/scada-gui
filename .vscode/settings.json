@@ -1,0 +1,11 @@
+{
+    "i18n-ally.editor.preferEditor": true,
+    "i18n-ally.enabledParsers": ["yaml", "ts", "js"],
+    "i18n-ally.localesPaths": ["src/locale"],
+    "i18n-ally.sourceLanguage": "ru",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "editor.foldingImportsByDefault": true
+}

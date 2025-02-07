@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "ES2020",
+        "downlevelIteration": true,
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "module": "ESNext",
+        "skipLibCheck": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "jsx": "react-jsx",
+        "strict": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
+        "paths": {
+            "@scada/common/*": ["packages/common/src/*"],
+            "@scada/editor/*": ["packages/editor/src/*"],
+            "@scada/viewer/*": ["packages/viewer/src/*"],
+            "@scada/state/*": ["packages/state/src/*"]
+        }
+    }
+}

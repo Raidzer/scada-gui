@@ -1,0 +1,15 @@
+.controlPanel {
+    border-bottom: 2px solid;
+    padding-bottom: 4px;
+}
+
+.buttonPlan {
+    background-color: lightgrey;
+    margin-left: 3px;
+    margin-top: 2px;
+}
+
+.buttonAddPlan {
+    margin-left: 3px;
+    margin-top: 2px;
+}

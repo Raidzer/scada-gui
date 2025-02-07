@@ -1,0 +1,41 @@
+.controlPanel {
+    border-bottom: 2px solid;
+    padding-bottom: 4px;
+    height: 40px;
+    background-color: lightgray;
+}
+
+.controlPanel button {
+    justify-content: left;
+    text-transform: none;
+    color: black;
+}
+
+.controlPanel svg {
+    margin-right: 4px;
+}
+
+.popoverContainer {
+    margin-top: 10px;
+}
+
+.popoverContent {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.popoverContent button {
+    justify-content: left;
+    text-transform: none;
+    color: black;
+}
+
+.popoverContent button:hover {
+    background-color: #bebebe;
+}
+
+.toolbarPopover {
+    display: flex;
+    flex-direction: column;
+}

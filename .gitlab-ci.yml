@@ -1,0 +1,73 @@
+stages:
+    - test
+    - sonar
+    - build
+    - on_failure
+    - deploy
+
+jest_job:
+    stage: test
+    tags:
+        - scada-builder
+    script:
+        - echo "Start test..."
+        - docker run -d -v /root/${CI_PROJECT_DIR}:/app --name react_test react_test_with_sonar:v.9
+        - docker exec -i react_test npm install
+        - docker exec -i react_test npm run testci
+        - echo "Test complited!"
+    artifacts:
+        paths:
+            - coverage/
+        expire_in: 1 day
+
+sonar_job:
+    stage: sonar
+    tags:
+        - scada-builder
+    script:
+        - echo "Start sonar test..."
+      # - docker exec -e NODE_TLS_REJECT_UNAUTHORIZED=0 react_test npm run sonar
+        - echo "Sonar test complited!"
+    dependencies:
+        - jest_job
+
+build_job:
+    stage: build
+    tags:
+        - scada-builder
+    script:
+        - echo "Start build..."
+        - docker exec -i react_test npm install
+        - docker exec -i react_test npm run build
+        - docker stop react_test
+        - docker rm react_test
+        - echo "Build complited!"
+    artifacts:
+        paths:
+            - build/
+        expire_in: 1 days
+    dependencies:
+        - sonar_job
+
+on_failure_job:
+    stage: on_failure
+    tags:
+        - scada-builder
+    script:
+        - docker stop react_test
+        - docker rm react_test
+    when: on_failure
+
+deploy_job:
+    stage: deploy
+    tags:
+        - scada-builder
+    script:
+        - echo "Deploy start..."
+        - docker stop react_server || true && docker rm react_server || true
+        - docker run -d -v /root/${CI_PROJECT_DIR}/build:/usr/share/nginx/html -p 8011:80 --name react_server react_web_server:v.1
+        - echo "Deploy complited!"
+    dependencies:
+        - build_job
+    only:
+        - master

@@ -1,0 +1,48 @@
+.mainContainer {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.footer {
+    height: 30px;
+    background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+}
+
+.contentContainer {
+    height: 90vh;
+    display: flex;
+    flex: 1;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.canvasContainer {
+    flex: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.optionsContainer {
+    flex: 10%;
+    display: flex;
+    border-right: 2px solid;
+}
+
+.entitiesContainer {
+    display: flex;
+    width:250px;
+    height: 250px;
+    flex-direction: row;
+    border: 2px solid;
+    border-radius: 5%;
+    z-index: 1000;
+    position: absolute;
+}
